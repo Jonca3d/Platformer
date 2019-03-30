@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
 using Platformer.Service;
 
 namespace Platformer.ObjectsOfGame
 {
     class Character : MasterObject
     {
-        public Character(int x, int y) : base(x, y, 2, 1) { }
+        public Character(int x, int y) : base(x, y, 6, 6) { }
 
         #region Массивы которые определяют траекторию движения обьекта
         // Массивы передаются в метод Update(Array arr) основного класса игры
@@ -64,9 +60,17 @@ namespace Platformer.ObjectsOfGame
         public override void Draw()
         {
             Console.SetCursorPosition(X, Y);
-            Console.Write("OOO");
-            Console.SetCursorPosition(X, Y - 1);
-            Console.Write("OOO");
+            Console.Write("  ███");
+            Console.SetCursorPosition(X, Y + 1);
+            Console.Write(" █   █");
+            Console.SetCursorPosition(X, Y + 2);
+            Console.Write("█ O O █");
+            Console.SetCursorPosition(X, Y + 3);
+            Console.Write(" █ U █");
+            Console.SetCursorPosition(X, Y + 4);
+            Console.Write("  █ █");
+            Console.SetCursorPosition(X, Y + 5);
+            Console.Write("███████");
         }
 
     }

@@ -14,9 +14,9 @@ namespace Platformer.GameLogic
         /// <param name="x">Координата Х начала строки</param>
         /// <param name="y">Координата Y начала строки</param>
         /// <param name="width">Ширина окна консоли</param>
-        public static void DrawString(string str, int x, int y, int width = Constants.WIDHT)
+        public static void DrawString(string str, int x, int y, int width = Constants.WIDHT, ConsoleColor color = ConsoleColor.White)
         {
-
+            
             bool onDisplay = true;
 
 

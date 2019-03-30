@@ -30,11 +30,6 @@ namespace Platformer.ObjectsOfGame
 
         };
 
-        //public IEnumerator GetEnumerator()
-        //{
-        //    return _obstraction.GetEnumerator();
-        //}
-
         public int Length
         {
             get { return _obstraction.Count; }

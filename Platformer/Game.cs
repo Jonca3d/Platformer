@@ -7,7 +7,7 @@ namespace Platformer
 {
     class Game
     {
-        Character character = new Character(20, Constants.HEIGHT - 3);
+        Character character = new Character(20, Constants.HEIGHT - 8);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
         Ground ground = new Ground();
         int endWorldCoorditates = Constants.WIDHT;

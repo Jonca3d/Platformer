@@ -32,7 +32,7 @@ namespace Platformer.ObjectsOfGame.BackgroundImage
             OutputImage.DrawString("", X, Y);
             OutputImage.DrawString("", X, Y);
             OutputImage.DrawString("", X, Y);
-            OutputImage.DrawString("", X, Y);
+            OutputImage.DrawString("", X, Y, color:ConsoleColor.DarkYellow);
         }
     }
 }
