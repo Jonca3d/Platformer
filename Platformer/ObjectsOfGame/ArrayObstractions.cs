@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Platformer.Service;
 
 namespace Platformer.ObjectsOfGame
@@ -13,44 +10,27 @@ namespace Platformer.ObjectsOfGame
 
         List<Obstruction> _obstraction = new List<Obstruction>()
         {
-            #region Ограждение уровня с левой стороны
-            new Obstruction(10, Constants.HEIGHT - 3, ConsoleColor.DarkRed),
+            #region Ограждение уровня с левой стороны          
             new Obstruction(9, Constants.HEIGHT - 5, ConsoleColor.DarkRed),
             new Obstruction(9, Constants.HEIGHT - 7, ConsoleColor.DarkRed),
-            new Obstruction(7, Constants.HEIGHT - 9, ConsoleColor.DarkRed),
-            new Obstruction(5, Constants.HEIGHT - 11, ConsoleColor.DarkRed),
-            new Obstruction(5, Constants.HEIGHT - 13, ConsoleColor.DarkRed),
-            new Obstruction(6, Constants.HEIGHT - 15, ConsoleColor.DarkRed),
-            new Obstruction(7, Constants.HEIGHT - 17, ConsoleColor.DarkRed),
-            new Obstruction(5, Constants.HEIGHT - 19, ConsoleColor.DarkRed),
-            new Obstruction(7, Constants.HEIGHT - 21, ConsoleColor.DarkRed),
-            new Obstruction(9, Constants.HEIGHT - 23, ConsoleColor.DarkRed),
-            new Obstruction(11, Constants.HEIGHT - 25, ConsoleColor.DarkRed),
-            new Obstruction(13, Constants.HEIGHT - 27, ConsoleColor.DarkRed),
-            new Obstruction(11, Constants.HEIGHT - 29, ConsoleColor.DarkRed),
-            new Obstruction(9, Constants.HEIGHT - 31, ConsoleColor.DarkRed),
-            new Obstruction(9, Constants.HEIGHT - 33, ConsoleColor.DarkRed),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 9, ConsoleColor.DarkRed),
+            new Obstruction(11, Constants.HEIGHT - 11, ConsoleColor.DarkRed),
+            new Obstruction(12, Constants.HEIGHT - 13, ConsoleColor.DarkRed),
+            new Obstruction(15, Constants.HEIGHT - 15, ConsoleColor.DarkRed),
+            new Obstruction(17, Constants.HEIGHT - 17, ConsoleColor.DarkRed),  
             #endregion
 
             #region Платформы
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
-            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(50, Constants.HEIGHT - 5, ConsoleColor.DarkGray),          
+            new Obstruction(90, Constants.HEIGHT - 5, ConsoleColor.DarkGray),
+            new Obstruction(110, Constants.HEIGHT - 10, ConsoleColor.DarkGray),
+            new Obstruction(130, Constants.HEIGHT - 15, ConsoleColor.DarkGray),
+            new Obstruction(150, Constants.HEIGHT - 18, ConsoleColor.DarkGray),
+            new Obstruction(128, Constants.HEIGHT - 23, ConsoleColor.DarkGray),
+            new Obstruction(110, Constants.HEIGHT - 27, ConsoleColor.DarkGray),
+            new Obstruction(90, Constants.HEIGHT - 30, ConsoleColor.DarkGray),
+            //new Obstruction(11, Constants.HEIGHT - 5, ConsoleColor.DarkGray),
+            //new Obstruction(11, Constants.HEIGHT - 5, ConsoleColor.DarkGray),
             #endregion
 
         };

@@ -7,7 +7,7 @@ namespace Platformer
 {
     class Game
     {
-        Character character = new Character(20, Constants.HEIGHT - 6);
+        Character character = new Character(30, Constants.HEIGHT - 6);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
         Ground ground = new Ground();
         int endWorldCoorditates = Constants.WIDHT;
@@ -33,7 +33,7 @@ namespace Platformer
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(Constants.WIDHT, Constants.HEIGHT);
             Console.SetWindowSize(Constants.WIDHT, Constants.HEIGHT);
-            Console.BackgroundColor = ConsoleColor.DarkCyan;
+            Console.BackgroundColor = ConsoleColor.DarkBlue;
             #endregion
 
             Draw();
@@ -47,9 +47,10 @@ namespace Platformer
             foreach (Obstruction obstr in arrayObtractions)
             {
                 obstr.Draw();
+
             }
             ground.Draw();
-            Thread.Sleep(8);
+            Thread.Sleep(9);
         }
 
         //Метод обновляет расположение обьектов на экране

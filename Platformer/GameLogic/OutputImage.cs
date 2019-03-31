@@ -10,10 +10,10 @@ namespace Platformer.GameLogic
         /// В него передаются координаты начала строки.
         /// Если строка выходит за пределы экрани ( или начинается за его пределами ), метод обрезает непометившуюся часть
         /// </summary>
-        /// <param name="str">Строка для вывода</param>
-        /// <param name="x">Координата Х начала строки</param>
-        /// <param name="y">Координата Y начала строки</param>
-        /// <param name="width">Ширина окна консоли</param>
+        /// <param name="str"> Строка для вывода </param>
+        /// <param name="x"> Координата Х начала строки </param>
+        /// <param name="y"> Координата Y начала строки </param>
+        /// <param name="width"> Ширина окна консоли </param>
         public static void DrawString(string str, int x, int y, int width = Constants.WIDHT, ConsoleColor color = ConsoleColor.White)
         {
             
