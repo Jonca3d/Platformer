@@ -77,7 +77,7 @@ namespace Platformer
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
-                if(character.Y < 20)
+                if(character.Y == 20)
                 {
                     character.Y += 1;
                     ground.Y += 1;
@@ -121,14 +121,6 @@ namespace Platformer
             while (down)
             {
                 character.Y += 1;
-                if(character.Y < Constants.HEIGHT - 1 && ground.Y > Constants.HEIGHT - 2)
-                {
-                    character.Y -= 1;
-                    ground.Y -= 1;
-                    foreach (Obstruction obst in arrayObtractions)
-                        obst.Y -= 1;
-                }
-
 
                 foreach (Obstruction obst in arrayObtractions)
                 {
@@ -140,6 +132,13 @@ namespace Platformer
                         down = false;
                         break;
                     }
+                }
+                if (character.Y < Constants.HEIGHT - 1 && ground.Y > Constants.HEIGHT - 2 && down)
+                {
+                    character.Y -= 1;
+                    ground.Y -= 1;
+                    foreach (Obstruction obst in arrayObtractions)
+                        obst.Y -= 1;
                 }
                 Draw();  
             }            

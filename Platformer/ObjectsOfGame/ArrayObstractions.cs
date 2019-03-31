@@ -29,8 +29,9 @@ namespace Platformer.ObjectsOfGame
             new Obstruction(128, Constants.HEIGHT - 23, ConsoleColor.DarkGray),
             new Obstruction(110, Constants.HEIGHT - 27, ConsoleColor.DarkGray),
             new Obstruction(90, Constants.HEIGHT - 30, ConsoleColor.DarkGray),
-            //new Obstruction(11, Constants.HEIGHT - 5, ConsoleColor.DarkGray),
-            //new Obstruction(11, Constants.HEIGHT - 5, ConsoleColor.DarkGray),
+            new Obstruction(115, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(130, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(145, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
             #endregion
 
         };
