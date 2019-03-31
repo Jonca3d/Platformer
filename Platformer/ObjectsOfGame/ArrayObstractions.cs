@@ -5,6 +5,9 @@ using Platformer.Service;
 
 namespace Platformer.ObjectsOfGame
 {
+    /// <summary>
+    /// Массив обьектов которые являются препядствиями для игрока
+    /// </summary>
     class ArrayObstractions : IEnumerable
     {
 
