@@ -16,13 +16,21 @@ namespace Platformer.ObjectsOfGame
 
         List<MasterObject> _keyObject = new List<MasterObject>()
         {
-            new Key(30,30,ConsoleColor.White),
+            new Key(30,30,"Ключ от двери", true, true, color: ConsoleColor.White),
 
         };
 
+        public int Length
+        {
+            get { return _keyObject.Count; }
+        }
+
         public IEnumerator GetEnumerator()
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < _keyObject.Count; i++)
+            {
+                yield return _keyObject[i];
+            }
         }
     }
 }

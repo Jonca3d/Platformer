@@ -8,12 +8,22 @@ namespace Platformer.ObjectsOfGame.KeyObject
 {
     public abstract class KeyObject : MasterObject
     {
-        protected KeyObject(int x, int y, int widthSize, int heightSize, ConsoleColor color) : base(x, y, widthSize, heightSize, color)
+        public string Description { get; }
+        public bool ForInventory { get; }
+        public bool Visible { get; set; }
+
+        public KeyObject(int x, int y, int widthSize, int heightSize, string description, bool forInventory, bool visible, ConsoleColor color = ConsoleColor.Gray) : base(x, y, widthSize, heightSize, color)
         {
+            Description = description;
+            ForInventory = forInventory;
+            Visible = visible;
         }
 
         public override void Draw()
         {           
         }
+
+        public virtual void Action()
+        { }
     }
 }

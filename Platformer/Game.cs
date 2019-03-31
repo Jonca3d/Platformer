@@ -10,8 +10,8 @@ namespace Platformer
     {
         Character character = new Character(40, Constants.HEIGHT - 6);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
+        ArrayKeyObject arrayKeyObject = new ArrayKeyObject();
         Ground ground = new Ground();
-        Key key = new Key(30, 30, ConsoleColor.White);
         int endWorldCoorditates = Constants.WIDHT;
 
         public Game()
@@ -44,15 +44,18 @@ namespace Platformer
         {
             Console.Clear();
             character.Draw();
-            key.Draw();
+            
             //TEST(character);
             foreach (Obstruction obstr in arrayObtractions)
             {
                 obstr.Draw();
-
+            }
+            foreach (KeyObject keyObj in arrayKeyObject)
+            {
+                keyObj.Draw();
             }
             ground.Draw();
-            Thread.Sleep(9);
+            Thread.Sleep(8);
         }
 
         //Метод обновляет расположение обьектов на экране
@@ -71,7 +74,7 @@ namespace Platformer
                     character.X -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X -= 1;
-                    key.X -= 1;
+             
 
                 }
                 else if(character.X == 19)
@@ -79,7 +82,7 @@ namespace Platformer
                     character.X += 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X += 1;
-                    key.X += 1;
+             
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
@@ -89,7 +92,7 @@ namespace Platformer
                     ground.Y += 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y += 1;
-                    key.Y += 1;
+               
 
                 }
                 else if(character.Y == Constants.HEIGHT - 2 && ground.Y > Constants.HEIGHT - 2)
@@ -98,7 +101,7 @@ namespace Platformer
                     ground.Y -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y -= 1;
-                    key.Y -= 1;
+        
                 }
 
                 #region Реализация пересечений с другими обьектами
@@ -149,7 +152,7 @@ namespace Platformer
                     ground.Y -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y -= 1;
-                    key.Y -= 1;
+             
                 }
                 Draw();  
             }            

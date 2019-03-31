@@ -3,9 +3,10 @@ using Platformer.GameLogic;
 
 namespace Platformer.ObjectsOfGame.KeyObject
 {
-    class Key : MasterObject
+    class Key : KeyObject
     {
-        public Key(int x, int y, ConsoleColor color) : base(x, y, 17, 2, color) { }
+        public Key(int x, int y, string description, bool forInventory, bool visible, ConsoleColor color = ConsoleColor.Gray) : base(x, y, 17, 2, description, forInventory, visible, color) {  }
+       
 
         public override void Draw()
         {
@@ -14,6 +15,11 @@ namespace Platformer.ObjectsOfGame.KeyObject
             OutputImage.DrawString(" oooo", X, Y + 2, color: Color);
         }
 
-        
+        public override void Action()
+        {
+            base.Action();
+        }
+
+
     }
 }
