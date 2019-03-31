@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using Platformer.Service;
+using Platformer.ObjectsOfGame.KeyObjectLibrary;
+using System.Collections;
 
 namespace Platformer.ObjectsOfGame
 {
-    class Character : MasterObject
+    class Character : MasterObject , IEnumerable
     {
+        List<KeyObject> _invetory = new List<KeyObject>();
+
         public Character(int x, int y, ConsoleColor color = ConsoleColor.Gray) : base(x, y, 4, 3, color) { }
 
         #region Массивы которые определяют траекторию движения обьекта
@@ -69,5 +74,14 @@ namespace Platformer.ObjectsOfGame
             Console.Write("█████");
         }
 
+        public void Add(KeyObject keyObj)
+        {
+            _invetory.Add(keyObj);
+        }
+
+        public IEnumerator GetEnumerator()
+        {
+            return ((IEnumerable)_invetory).GetEnumerator();
+        }
     }
 }

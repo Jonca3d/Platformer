@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using Platformer.ObjectsOfGame.KeyObject;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Platformer.ObjectsOfGame.KeyObjectLibrary;
 
 namespace Platformer.ObjectsOfGame
 {
@@ -14,11 +11,11 @@ namespace Platformer.ObjectsOfGame
     class ArrayKeyObject : IEnumerable
     {
 
-        List<MasterObject> _keyObject = new List<MasterObject>()
+        List<KeyObject> _keyObject = new List<KeyObject>()
         {
             new Key(30,30,"Ключ от двери", true, true, color: ConsoleColor.White),
-
         };
+      
 
         public int Length
         {

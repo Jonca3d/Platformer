@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Platformer.ObjectsOfGame.KeyObject
+namespace Platformer.ObjectsOfGame.KeyObjectLibrary
 {
     public abstract class KeyObject : MasterObject
     {

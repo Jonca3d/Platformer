@@ -1,7 +1,7 @@
 ﻿using System;
 using Platformer.GameLogic;
 
-namespace Platformer.ObjectsOfGame.KeyObject
+namespace Platformer.ObjectsOfGame.KeyObjectLibrary
 {
     class Key : KeyObject
     {

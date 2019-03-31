@@ -2,7 +2,7 @@
 using System.Threading;
 using Platformer.Service;
 using Platformer.ObjectsOfGame;
-using Platformer.ObjectsOfGame.KeyObject;
+using Platformer.ObjectsOfGame.KeyObjectLibrary;
 
 namespace Platformer
 {
@@ -74,6 +74,8 @@ namespace Platformer
                     character.X -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X -= 1;
+                    foreach (KeyObject keyObj in arrayKeyObject)
+                        keyObj.X -= 1;
              
 
                 }
@@ -82,7 +84,10 @@ namespace Platformer
                     character.X += 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X += 1;
-             
+                    foreach (KeyObject keyObj in arrayKeyObject)
+                        keyObj.X += 1;
+
+
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
@@ -92,7 +97,11 @@ namespace Platformer
                     ground.Y += 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y += 1;
-               
+                    foreach (KeyObject keyObj in arrayKeyObject)
+                        keyObj.Y += 1;
+
+
+
 
                 }
                 else if(character.Y == Constants.HEIGHT - 2 && ground.Y > Constants.HEIGHT - 2)
@@ -101,7 +110,11 @@ namespace Platformer
                     ground.Y -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y -= 1;
-        
+
+                    foreach (KeyObject keyObj in arrayKeyObject)
+                        keyObj.Y -= 1;
+
+
                 }
 
                 #region Реализация пересечений с другими обьектами
@@ -130,7 +143,7 @@ namespace Platformer
             if (character.Y != Constants.HEIGHT - 3)
                 down = true;
 
-            //Игрок падает вниз пока не пересечется с обьектом коллюзии или пока не достигнет земли
+            //Игрок падает вниз пока не пересечется с обьектом коллизии или пока не достигнет земли
             while (down)
             {
                 character.Y += 1;
