@@ -78,7 +78,7 @@ namespace Platformer
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
-                if(character.Y == 20)
+                if(character.Y < 20)
                 {
                     character.Y += 1;
                     ground.Y += 1;
@@ -167,19 +167,19 @@ namespace Platformer
         //
         private void Action()
         {
-            var act = Console.ReadKey().KeyChar;
+            var act = Console.ReadKey().Key;
             switch (act)
             {
-                case 'a':
+                case ConsoleKey.A:
                     Update(character.MoveToLeft);
                     break;
-                case 'd':
+                case ConsoleKey.D:
                     Update(character.MoveToRight);
                     break;
-                case 'q':
+                case ConsoleKey.Q:
                     Update(character.JumpToLeft);
                     break;
-                case 'e':
+                case ConsoleKey.E:
                     Update(character.JumpToRight);
                     break;
                 default:
