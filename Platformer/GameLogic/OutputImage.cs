@@ -42,7 +42,9 @@ namespace Platformer.GameLogic
             if (onDisplay)
             {
                 Console.SetCursorPosition(x, y);
+                Console.ForegroundColor = color;
                 Console.Write(str);
+                Console.ForegroundColor = ConsoleColor.Gray;
             }
 
         }

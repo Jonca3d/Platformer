@@ -9,7 +9,7 @@ namespace Platformer.ObjectsOfGame.BackgroundImage
 {
     class Tree : MasterObject
     {
-        public Tree(int x, int y) : base(x, y, 20, 20) { }
+        public Tree(int x, int y, ConsoleColor color) : base(x, y, 20, 20, color) { }
 
         public override void Draw()
         {

@@ -7,7 +7,7 @@ namespace Platformer
 {
     class Game
     {
-        Character character = new Character(20, Constants.HEIGHT - 8);
+        Character character = new Character(20, Constants.HEIGHT - 6);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
         Ground ground = new Ground();
         int endWorldCoorditates = Constants.WIDHT;
@@ -33,6 +33,7 @@ namespace Platformer
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(Constants.WIDHT, Constants.HEIGHT);
             Console.SetWindowSize(Constants.WIDHT, Constants.HEIGHT);
+            Console.BackgroundColor = ConsoleColor.DarkCyan;
             #endregion
 
             Draw();
@@ -75,7 +76,7 @@ namespace Platformer
                         obst.X += 1;                    
                 }
 
-                //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по горизонтали )
+                //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
                 if(character.Y == 20)
                 {
                     character.Y += 1;
@@ -120,7 +121,7 @@ namespace Platformer
             while (down)
             {
                 character.Y += 1;
-                if(character.Y == Constants.HEIGHT - 7 && ground.Y > Constants.HEIGHT - 2)
+                if(character.Y < Constants.HEIGHT - 1 && ground.Y > Constants.HEIGHT - 2)
                 {
                     character.Y -= 1;
                     ground.Y -= 1;
@@ -133,7 +134,7 @@ namespace Platformer
                 {
                     // Если игрок пересекается с обьктом или достигает земли цикл останавливается
                     if (character.X <= obst.DemensionX && character.DemensionX >= obst.X &&
-                    character.Y <= obst.DemensionY && character.DemensionY >= obst.Y || character.DemensionY == 39)
+                    character.Y <= obst.DemensionY && character.DemensionY >= obst.Y || character.DemensionY == 38)
                     {
                         character.Y -= 1;
                         down = false;

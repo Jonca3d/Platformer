@@ -5,7 +5,7 @@ namespace Platformer.ObjectsOfGame
 {
     class Character : MasterObject
     {
-        public Character(int x, int y) : base(x, y, 6, 6) { }
+        public Character(int x, int y, ConsoleColor color = ConsoleColor.Gray) : base(x, y, 4, 3, color) { }
 
         #region Массивы которые определяют траекторию движения обьекта
         // Массивы передаются в метод Update(Array arr) основного класса игры
@@ -60,17 +60,13 @@ namespace Platformer.ObjectsOfGame
         public override void Draw()
         {
             Console.SetCursorPosition(X, Y);
-            Console.Write("  ███");
+            Console.Write(" ███");
             Console.SetCursorPosition(X, Y + 1);
-            Console.Write(" █   █");
+            Console.Write("█O O█");
             Console.SetCursorPosition(X, Y + 2);
-            Console.Write("█ O O █");
+            Console.Write("█ U █");
             Console.SetCursorPosition(X, Y + 3);
-            Console.Write(" █ U █");
-            Console.SetCursorPosition(X, Y + 4);
-            Console.Write("  █ █");
-            Console.SetCursorPosition(X, Y + 5);
-            Console.Write("███████");
+            Console.Write("█████");
         }
 
     }

@@ -13,20 +13,45 @@ namespace Platformer.ObjectsOfGame
 
         List<Obstruction> _obstraction = new List<Obstruction>()
         {
-            new Obstruction(30, Constants.HEIGHT - 3),
-            new Obstruction(60, Constants.HEIGHT - 3),
-            new Obstruction(90, Constants.HEIGHT - 3),
-            new Obstruction(50, Constants.HEIGHT - 10),
-            new Obstruction(70, Constants.HEIGHT - 15),
-            new Obstruction(90, Constants.HEIGHT - 20),
-            new Obstruction(120, Constants.HEIGHT - 25),
-            new Obstruction(140, Constants.HEIGHT - 30),
-            new Obstruction(150, Constants.HEIGHT - 35),
-            new Obstruction(160, Constants.HEIGHT - 40),
-            new Obstruction(170, Constants.HEIGHT - 45),
-            new Obstruction(40, Constants.HEIGHT - 7),
-            new Obstruction(140, Constants.HEIGHT - 7),
-            new Obstruction(-10, Constants.HEIGHT - 7),
+            #region Ограждение уровня с левой стороны
+            new Obstruction(10, Constants.HEIGHT - 3, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 5, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 7, ConsoleColor.DarkRed),
+            new Obstruction(7, Constants.HEIGHT - 9, ConsoleColor.DarkRed),
+            new Obstruction(5, Constants.HEIGHT - 11, ConsoleColor.DarkRed),
+            new Obstruction(5, Constants.HEIGHT - 13, ConsoleColor.DarkRed),
+            new Obstruction(6, Constants.HEIGHT - 15, ConsoleColor.DarkRed),
+            new Obstruction(7, Constants.HEIGHT - 17, ConsoleColor.DarkRed),
+            new Obstruction(5, Constants.HEIGHT - 19, ConsoleColor.DarkRed),
+            new Obstruction(7, Constants.HEIGHT - 21, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 23, ConsoleColor.DarkRed),
+            new Obstruction(11, Constants.HEIGHT - 25, ConsoleColor.DarkRed),
+            new Obstruction(13, Constants.HEIGHT - 27, ConsoleColor.DarkRed),
+            new Obstruction(11, Constants.HEIGHT - 29, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 31, ConsoleColor.DarkRed),
+            new Obstruction(9, Constants.HEIGHT - 33, ConsoleColor.DarkRed),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkRed),
+            #endregion
+
+            #region Платформы
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            new Obstruction(11, Constants.HEIGHT - 35, ConsoleColor.DarkGray),
+            #endregion
 
         };
 
