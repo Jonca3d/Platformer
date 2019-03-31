@@ -7,7 +7,7 @@ namespace Platformer
 {
     class Game
     {
-        Character character = new Character(30, Constants.HEIGHT - 6);
+        Character character = new Character(90, Constants.HEIGHT - 35);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
         Ground ground = new Ground();
         int endWorldCoorditates = Constants.WIDHT;
@@ -63,7 +63,7 @@ namespace Platformer
                 character.Y += move.Y;
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по горизонтали )
-                if(character.X == 70)
+                if(character.X > 70)
                 {
                     character.X -= 1;
                     foreach (Obstruction obst in arrayObtractions)
@@ -77,7 +77,7 @@ namespace Platformer
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
-                if(character.Y == 20)
+                if(character.Y < 20)
                 {
                     character.Y += 1;
                     ground.Y += 1;
