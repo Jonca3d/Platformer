@@ -13,7 +13,7 @@ namespace Platformer.ObjectsOfGame
 
         List<KeyObject> _keyObject = new List<KeyObject>()
         {
-            new Key(30,30,"Ключ от двери", true, true, color: ConsoleColor.White),
+            //new Key(30,30,"Ключ от двери", true, true, color: ConsoleColor.White),
         };
       
 

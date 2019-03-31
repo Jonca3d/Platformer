@@ -44,7 +44,7 @@ namespace Platformer
         {
             Console.Clear();
             character.Draw();
-            
+
             //TEST(character);
             foreach (Obstruction obstr in arrayObtractions)
             {
@@ -61,7 +61,7 @@ namespace Platformer
         //Метод обновляет расположение обьектов на экране
         //Принимает массив координат в котором находится траектория движения игрока
         private void Update(Coordinates[] action)
-        {   
+        {
             bool collision = false;
             foreach (var move in action)
             {
@@ -69,17 +69,17 @@ namespace Platformer
                 character.Y += move.Y;
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по горизонтали )
-                if(character.X > 70)
+                if (character.X > 70)
                 {
                     character.X -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X -= 1;
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.X -= 1;
-             
+
 
                 }
-                else if(character.X == 19)
+                else if (character.X == 19)
                 {
                     character.X += 1;
                     foreach (Obstruction obst in arrayObtractions)
@@ -91,7 +91,7 @@ namespace Platformer
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
-                if(character.Y < 20)
+                if (character.Y == 20)
                 {
                     character.Y += 1;
                     ground.Y += 1;
@@ -104,7 +104,7 @@ namespace Platformer
 
 
                 }
-                else if(character.Y == Constants.HEIGHT - 2 && ground.Y > Constants.HEIGHT - 2)
+                else if (character.Y == Constants.HEIGHT - 2 && ground.Y > Constants.HEIGHT - 2)
                 {
                     character.Y -= 1;
                     ground.Y -= 1;
@@ -129,13 +129,13 @@ namespace Platformer
                         character.Y -= move.Y;
                         collision = true;
                         break;
-                    }                    
+                    }
                 }
 
                 if (collision) break;
 
                 Draw();
-            #endregion
+                #endregion
             }
 
             //Если игрок выше уровня земли
@@ -147,6 +147,8 @@ namespace Platformer
             while (down)
             {
                 character.Y += 1;
+
+
 
                 foreach (Obstruction obst in arrayObtractions)
                 {
@@ -163,12 +165,17 @@ namespace Platformer
                 {
                     character.Y -= 1;
                     ground.Y -= 1;
+
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y -= 1;
-             
+
+                    foreach (KeyObject keyObj in arrayKeyObject)
+                        keyObj.Y -= 1;
+
                 }
-                Draw();  
-            }            
+                if (down)
+                    Draw();
+            }
         }
 
         //Вспомогательный метод для отлавливания координат обьектов
