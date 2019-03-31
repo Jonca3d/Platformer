@@ -21,7 +21,6 @@ namespace Platformer
         public void StartGame()
         {
             Action();
-            Draw();
             StartGame();
         }
 
