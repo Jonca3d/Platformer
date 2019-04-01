@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Platformer.ObjectsOfGame.KeyObjectLibrary;
+using Platformer.Service;
 
 namespace Platformer.ObjectsOfGame
 {
@@ -13,7 +14,7 @@ namespace Platformer.ObjectsOfGame
 
         List<KeyObject> _keyObject = new List<KeyObject>()
         {
-            new Key(30,30,"KEY", true, true, color: ConsoleColor.White),
+            new Key(185, Constants.HEIGHT -118, "KEY", true, true, color: ConsoleColor.White),        
         };
       
 
