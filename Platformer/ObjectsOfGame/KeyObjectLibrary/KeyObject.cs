@@ -24,6 +24,7 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
         }
 
         public virtual void Action()
-        { }
+        {
+        }
     }
 }

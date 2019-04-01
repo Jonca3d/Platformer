@@ -13,13 +13,18 @@ namespace Platformer.ObjectsOfGame
 
         List<KeyObject> _keyObject = new List<KeyObject>()
         {
-            //new Key(30,30,"Ключ от двери", true, true, color: ConsoleColor.White),
+            new Key(30,30,"KEY", true, true, color: ConsoleColor.White),
         };
       
 
         public int Length
         {
             get { return _keyObject.Count; }
+        }
+
+        public void Remove(KeyObject keyObj)
+        {
+            _keyObject.Remove(keyObj);
         }
 
         public IEnumerator GetEnumerator()

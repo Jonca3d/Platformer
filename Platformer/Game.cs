@@ -52,9 +52,12 @@ namespace Platformer
             }
             foreach (KeyObject keyObj in arrayKeyObject)
             {
-                keyObj.Draw();
+                if (keyObj.Visible)
+                    keyObj.Draw();
             }
             ground.Draw();
+            Inventory.Draw(character.getName());
+            
             Thread.Sleep(8);
         }
 
@@ -129,6 +132,21 @@ namespace Platformer
                         character.Y -= move.Y;
                         collision = true;
                         break;
+                    }
+                }
+
+                foreach( KeyObject keyObj in arrayKeyObject)
+                {
+                    // Если игрок пересекается с ключевым обьектом
+                    if ((character.X <= keyObj.DemensionX && character.DemensionX >= keyObj.X &&
+                    character.Y <= keyObj.DemensionY && character.DemensionY >= keyObj.Y))
+                    {
+                        // Если обьект может стать частью инвенторя, он ею становиться и пропадает со сцены
+                        if (keyObj.ForInventory)
+                        {
+                            character.Add(keyObj);
+                            arrayKeyObject.Remove(keyObj);
+                        }                        
                     }
                 }
 

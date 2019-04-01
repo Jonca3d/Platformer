@@ -6,9 +6,10 @@ using System.Collections;
 
 namespace Platformer.ObjectsOfGame
 {
-    class Character : MasterObject , IEnumerable
+    class Character : MasterObject, IEnumerable
     {
         List<KeyObject> _invetory = new List<KeyObject>();
+        string[] nameObjectsOfInventory = new string[5];
 
         public Character(int x, int y, ConsoleColor color = ConsoleColor.Gray) : base(x, y, 4, 3, color) { }
 
@@ -75,13 +76,28 @@ namespace Platformer.ObjectsOfGame
         }
 
         public void Add(KeyObject keyObj)
-        {
+        {            
             _invetory.Add(keyObj);
         }
 
         public IEnumerator GetEnumerator()
         {
             return ((IEnumerable)_invetory).GetEnumerator();
+        }
+
+        public string[] getName()
+        {
+            if(_invetory != null)
+            {
+
+                for (int i = 0; i < _invetory.Count; i++)
+                {
+                    nameObjectsOfInventory[i] = _invetory[i].Description;
+                }
+            }
+            
+
+            return nameObjectsOfInventory;
         }
     }
 }

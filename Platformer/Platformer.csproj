@@ -49,6 +49,7 @@
     <Compile Include="ObjectsOfGame\Character.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="ObjectsOfGame\Ground.cs" />
+    <Compile Include="ObjectsOfGame\Inventory.cs" />
     <Compile Include="ObjectsOfGame\KeyObjectLibrary\Key.cs" />
     <Compile Include="ObjectsOfGame\KeyObjectLibrary\KeyObject.cs" />
     <Compile Include="ObjectsOfGame\MasterObject.cs" />
