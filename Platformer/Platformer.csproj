@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLogic\ObjectInteraction.cs" />
     <Compile Include="GameLogic\OutputImage.cs" />
     <Compile Include="ObjectsOfGame\ArrayKeyObject.cs" />
     <Compile Include="ObjectsOfGame\ArrayObstractions.cs" />
@@ -50,6 +51,7 @@
     <Compile Include="Game.cs" />
     <Compile Include="ObjectsOfGame\Ground.cs" />
     <Compile Include="ObjectsOfGame\Inventory.cs" />
+    <Compile Include="ObjectsOfGame\KeyObjectLibrary\Door.cs" />
     <Compile Include="ObjectsOfGame\KeyObjectLibrary\Key.cs" />
     <Compile Include="ObjectsOfGame\KeyObjectLibrary\KeyObject.cs" />
     <Compile Include="ObjectsOfGame\MasterObject.cs" />

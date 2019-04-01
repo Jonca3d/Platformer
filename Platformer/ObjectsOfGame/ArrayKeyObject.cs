@@ -9,12 +9,13 @@ namespace Platformer.ObjectsOfGame
     /// <summary>
     /// Массив обьектов с которыми может взаимодействовать игрок
     /// </summary>
-    class ArrayKeyObject : IEnumerable
+    public class ArrayKeyObject : IEnumerable
     {
 
         List<KeyObject> _keyObject = new List<KeyObject>()
         {
-            new Key(185, Constants.HEIGHT -118, "KEY", true, true, color: ConsoleColor.White),        
+            new Key(185, Constants.HEIGHT -118, "KEY", true, true, color: ConsoleColor.White),
+            new Door( 220, Constants.HEIGHT - 11, "DOOR", false, true, color: ConsoleColor.DarkYellow )
         };
       
 

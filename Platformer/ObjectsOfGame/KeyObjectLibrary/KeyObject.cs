@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Platformer.ObjectsOfGame.KeyObjectLibrary
 {
@@ -42,17 +38,11 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
             Visible = visible;
         }
 
-
-        public override void Draw()
-        {           
-        }
-
+        public override void Draw() {  }
 
         /// <summary>
         /// Если у обьекта есть какое-то уникальное действие его можно прописать в этои методе
         /// </summary>
-        public virtual void Action()
-        {
-        }
+        public virtual void Action() {  }
     }
 }

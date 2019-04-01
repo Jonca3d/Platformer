@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace Platformer.ObjectsOfGame
 {
-    class Character : MasterObject, IEnumerable
+    public class Character : MasterObject, IEnumerable
     {
         List<KeyObject> _invetory = new List<KeyObject>();
         string[] nameObjectsOfInventory = new string[5];

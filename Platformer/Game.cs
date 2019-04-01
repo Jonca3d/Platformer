@@ -3,6 +3,7 @@ using System.Threading;
 using Platformer.Service;
 using Platformer.ObjectsOfGame;
 using Platformer.ObjectsOfGame.KeyObjectLibrary;
+using Platformer.GameLogic;
 
 namespace Platformer
 {
@@ -26,30 +27,32 @@ namespace Platformer
             StartGame();
         }
 
-        //Инициализация игры
+        
+        /// <summary>
+        /// Инициализация игры.
+        /// </summary>
         private void Init()
         {
-            Console.CursorVisible = false;
-            #region Задаем размер консоли
+            Console.CursorVisible = false;           
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(Constants.WIDHT, Constants.HEIGHT);
             Console.SetWindowSize(Constants.WIDHT, Constants.HEIGHT);
-            Console.BackgroundColor = ConsoleColor.DarkBlue;
-            #endregion
+            Console.BackgroundColor = Constants.BACKGROUNDCOLOR;
 
             Draw();
         }
 
+        /// <summary>
+        /// Отрисовка обьектов на сцене.
+        /// </summary>
         private void Draw()
         {
             Console.Clear();
-            character.Draw();
-
             //TEST(character);
             foreach (Obstruction obstr in arrayObtractions)
             {
                 obstr.Draw();
-            }
+            }          
             foreach (KeyObject keyObj in arrayKeyObject)
             {
                 if (keyObj.Visible)
@@ -57,29 +60,34 @@ namespace Platformer
             }
             ground.Draw();
             Inventory.Draw(character.getName());
-            
+            character.Draw();
             Thread.Sleep(8);
         }
-
-        //Метод обновляет расположение обьектов на экране
-        //Принимает массив координат в котором находится траектория движения игрока
+        
+        /// <summary>
+        /// Метод обновляет расположение обьектов на экране.
+        /// Принимает массив координат в котором находится траектория движения игрока.
+        /// </summary>
+        /// <param name="action"> Массив координат траектории движения обьекта </param>
         private void Update(Coordinates[] action)
         {
+
+            // collision - принимает значение true если персонаж пересекается с обьектом коллизии
             bool collision = false;
+
             foreach (var move in action)
             {
                 character.X += move.X;
                 character.Y += move.Y;
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по горизонтали )
-                if (character.X > 70)
+                if (character.X == 70)
                 {
                     character.X -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.X -= 1;
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.X -= 1;
-
 
                 }
                 else if (character.X == 19)
@@ -90,11 +98,10 @@ namespace Platformer
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.X += 1;
 
-
                 }
 
                 //Если игрок достигает определенных границ экрана, позиции всех обьектов смещаются ( по вертикали )
-                if (character.Y == 20)
+                if (character.Y == 15)
                 {
                     character.Y += 1;
                     ground.Y += 1;
@@ -103,9 +110,6 @@ namespace Platformer
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.Y += 1;
 
-
-
-
                 }
                 else if (character.Y == Constants.HEIGHT - 2 && ground.Y > Constants.HEIGHT - 2)
                 {
@@ -113,10 +117,8 @@ namespace Platformer
                     ground.Y -= 1;
                     foreach (Obstruction obst in arrayObtractions)
                         obst.Y -= 1;
-
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.Y -= 1;
-
 
                 }
 
@@ -125,8 +127,7 @@ namespace Platformer
                 {
                     // Если игрок пересекается с обьктом цикл останавливается
                     if ((character.X <= obst.DemensionX && character.DemensionX >= obst.X &&
-                    character.Y <= obst.DemensionY && character.DemensionY >= obst.Y) ||
-                    (character.X < 0) || (character.X > Constants.WIDHT - 3))
+                    character.Y <= obst.DemensionY && character.DemensionY >= obst.Y))
                     {
                         character.X -= move.X;
                         character.Y -= move.Y;
@@ -135,20 +136,7 @@ namespace Platformer
                     }
                 }
 
-                foreach( KeyObject keyObj in arrayKeyObject)
-                {
-                    // Если игрок пересекается с ключевым обьектом
-                    if ((character.X <= keyObj.DemensionX && character.DemensionX >= keyObj.X &&
-                    character.Y <= keyObj.DemensionY && character.DemensionY >= keyObj.Y))
-                    {
-                        // Если обьект может стать частью инвенторя, он ею становиться и пропадает со сцены
-                        if (keyObj.ForInventory)
-                        {
-                            character.Add(keyObj);
-                            arrayKeyObject.Remove(keyObj);
-                        }                        
-                    }
-                }
+                ObjectInteraction.Interaction(arrayKeyObject, character);
 
                 if (collision) break;
 
@@ -156,8 +144,11 @@ namespace Platformer
                 #endregion
             }
 
-            //Если игрок выше уровня земли
+            // Если игрок выше уровня земли
+            // Если значение down == true, реализуется анимация падения вниз
             bool down = false;
+
+            // Если персонаж выше уровня земли
             if (character.Y != Constants.HEIGHT - 3)
                 down = true;
 
@@ -165,8 +156,6 @@ namespace Platformer
             while (down)
             {
                 character.Y += 1;
-
-
 
                 foreach (Obstruction obst in arrayObtractions)
                 {
@@ -205,13 +194,13 @@ namespace Platformer
             Console.Write("[ StartWorldCoordinates ] - {0}", endWorldCoorditates - Constants.WIDHT);
             Console.SetCursorPosition(1, 4);
             Console.Write("[  EndWorldCoordinates  ] - {0}", endWorldCoorditates);
-            int line = 5;
-            foreach (Obstruction obst in arrayObtractions)
-            {
-                Console.SetCursorPosition(1, line);
-                Console.Write("[      Obstruction      ] - X: {0:d3} DemX: {1:d3}", obst.X, obst.DemensionX);
-                line++;
-            }
+            //int line = 5;
+            //foreach (Obstruction obst in arrayObtractions)
+            //{
+            //    Console.SetCursorPosition(1, line);
+            //    Console.Write("[      Obstruction      ] - X: {0:d3} DemX: {1:d3}", obst.X, obst.DemensionX);
+            //    line++;
+            //}
         }
 
         //
@@ -231,6 +220,9 @@ namespace Platformer
                     break;
                 case ConsoleKey.E:
                     Update(character.JumpToRight);
+                    break;
+                case ConsoleKey.Enter:
+                    //GameLogic.ObjectInteraction.Interaction();
                     break;
                 default:
                     break;
