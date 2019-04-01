@@ -15,11 +15,11 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
             OutputImage.DrawString(" oooo", X, Y + 2, color: Color);
         }
 
-        public override void Action()
+       
+
+        public override void Action(Character c)
         {
-            base.Action();
+            base.Action(c);
         }
-
-
     }
 }

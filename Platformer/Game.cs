@@ -174,7 +174,7 @@ namespace Platformer
                     ground.Y -= 1;
 
                     foreach (Obstruction obst in arrayObtractions)
-                        obst.Y -= 1;
+                        obst.Y -= 1;                    
 
                     foreach (KeyObject keyObj in arrayKeyObject)
                         keyObj.Y -= 1;
@@ -222,7 +222,7 @@ namespace Platformer
                     Update(character.JumpToRight);
                     break;
                 case ConsoleKey.Enter:
-                    //GameLogic.ObjectInteraction.Interaction();
+                    ObjectInteraction.Interaction(arrayKeyObject, character, act);
                     break;
                 default:
                     break;

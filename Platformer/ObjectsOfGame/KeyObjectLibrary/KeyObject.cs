@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Platformer.ObjectsOfGame.KeyObjectLibrary
 {
@@ -43,6 +44,6 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
         /// <summary>
         /// Если у обьекта есть какое-то уникальное действие его можно прописать в этои методе
         /// </summary>
-        public virtual void Action() {  }
+        public virtual void Action(Character character) { }
     }
 }

@@ -65,8 +65,8 @@ namespace Platformer.ObjectsOfGame
         //Отрисовка персонажа
         public override void Draw()
         {
-            Console.SetCursorPosition(X, Y);
-            Console.Write(" ███");
+            Console.SetCursorPosition(X + 1, Y);
+            Console.Write( "███");
             Console.SetCursorPosition(X, Y + 1);
             Console.Write("█O O█");
             Console.SetCursorPosition(X, Y + 2);

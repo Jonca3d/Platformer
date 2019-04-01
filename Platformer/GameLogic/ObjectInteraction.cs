@@ -27,5 +27,21 @@ namespace Platformer.GameLogic
                 }
             }
         }
+
+        public static void Interaction(ArrayKeyObject arrayKeyObject, Character character, ConsoleKey key)
+        {
+            foreach (KeyObject keyObj in arrayKeyObject)
+            {
+                // Если игрок пересекается с ключевым обьектом
+                if ((character.X <= keyObj.DemensionX && character.DemensionX >= keyObj.X &&
+                character.Y <= keyObj.DemensionY && character.DemensionY >= keyObj.Y))
+                {                    
+                    if (key == ConsoleKey.Enter)
+                    {
+                        keyObj.Action(character);
+                    }
+                }
+            }
+        }      
     }
 }
