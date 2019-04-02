@@ -3,17 +3,20 @@ using System;
 
 namespace Platformer.GameLogic
 {
+    /// <summary>
+    /// Методы класса выводят строки в заданных координатах с заданым цветом.
+    /// </summary>
     public static class OutputImage
     {
         /// <summary>
         /// Метод выводит строку текста на экран.
         /// В него передаются координаты начала строки.
-        /// Если строка выходит за пределы экрани ( или начинается за его пределами ), метод обрезает непометившуюся часть
+        /// Если строка выходит за пределы экрани ( или начинается за его пределами ), метод обрезает непоместившуюся часть.
         /// </summary>
-        /// <param name="str"> Строка для вывода </param>
-        /// <param name="x"> Координата Х начала строки </param>
-        /// <param name="y"> Координата Y начала строки </param>
-        /// <param name="width"> Ширина окна консоли </param>
+        /// <param name="str"> Строка для вывода. </param>
+        /// <param name="x"> Координата Х начала строки. </param>
+        /// <param name="y"> Координата Y начала строки. </param>
+        /// <param name="width"> Ширина окна консоли. </param>
         public static void DrawString(string str, int x, int y, int width = Constants.WIDHT, ConsoleColor color = ConsoleColor.White)
         {
             
@@ -49,6 +52,12 @@ namespace Platformer.GameLogic
 
         }
 
+
+        /// <summary>
+        /// Метод выводит землю на экран.
+        /// </summary>
+        /// <param name="ground"> Строка с символами из которых рисуется Земля. </param>
+        /// <param name="y"> Уровень земли по вертикали. </param>
         public static void DrawGround(string ground, int y)
         {
             if(y >= Constants.HEIGHT)            

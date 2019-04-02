@@ -37,9 +37,6 @@ namespace Platformer
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(Constants.WIDHT, Constants.HEIGHT);
             Console.SetWindowSize(Constants.WIDHT, Constants.HEIGHT);
-            //Console.BackgroundColor = Constants.BACKGROUNDCOLOR;
-
-            Draw();
         }
 
         /// <summary>

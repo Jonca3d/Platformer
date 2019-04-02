@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Platformer.GameLogic
 {
+    /// <summary>
+    /// Игровое меню.
+    /// </summary>
     public class Menu
     {
         private string[] ElementsMenu { get; }
@@ -15,6 +14,13 @@ namespace Platformer.GameLogic
 
         private int focusPosition = 0;
 
+        /// <summary>
+        /// Игровое меню.
+        /// </summary>
+        /// <param name="elementsMenu"> Массив строк. Каждая строка будет элементом меню. </param>
+        /// <param name="windowSizeX"> Ширина окна консоли. </param>
+        /// <param name="windowSizeY"> Высота окна консоли. </param>
+        /// <param name="game"> Экземпляр класса игры. </param>
         public Menu(string[] elementsMenu, int windowSizeX, int windowSizeY,  Game game)
         {
             ElementsMenu = elementsMenu;
@@ -23,6 +29,9 @@ namespace Platformer.GameLogic
             Game = game;
         }
 
+        /// <summary>
+        /// Вывкести меню на консоль.
+        /// </summary>
         public void Show()
         {
             while (true)
@@ -55,6 +64,10 @@ namespace Platformer.GameLogic
             }
         }
 
+        /// <summary>
+        /// Метод создает из массива строк вертикальное меню.
+        /// </summary>
+        /// <param name="focusPosition">  </param>
         void CreateMenu(int focusPosition)
         {
             int menuY = (WindowSiseY / 2) - (ElementsMenu.Length / 2);

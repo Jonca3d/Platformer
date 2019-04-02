@@ -4,10 +4,17 @@ using Platformer.Service;
 
 namespace Platformer.GameLogic
 {
+    /// <summary>
+    /// Методы класса вызываются при прохождении уровня
+    /// </summary>
     public static class LevelComplete
     {
+        /// <summary>
+        /// Метод вызыавется по окончанию игры
+        /// </summary>
         public static void End()
         {
+            #region Закрашивает экран по спирали
             int k = 1;
             int sleep = 0;
             int xStart = -1;
@@ -37,7 +44,6 @@ namespace Platformer.GameLogic
                 yEnd--;
                 xEnd--;
 
-
                 for(int i = xEnd; i > xStart; i--)
                 {
                     Console.SetCursorPosition(i, yEnd);
@@ -55,6 +61,8 @@ namespace Platformer.GameLogic
                 if (k > 20) break;
             }// while()
 
+            #endregion
+
             Console.BackgroundColor = ConsoleColor.Black;
 
             for(int i = Constants.WIDHT + 5; i>-160; i--)
@@ -70,6 +78,9 @@ namespace Platformer.GameLogic
                 OutputImage.DrawString(":......::::.......:::..::::..:::......::::..:::::..::..:::::..:::::..::::::.......:::........::..:::::..:::::..:::::....:::.......:::..::::..:::......:::..:::::::..::::::.......::::.......::::...::...:::....::..::::..::", i, 27);
                 Thread.Sleep(40);
             }
+
+            Console.ReadKey();
+            Environment.Exit(0);
         }
     }
 }

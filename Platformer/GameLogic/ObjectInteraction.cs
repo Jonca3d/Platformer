@@ -1,13 +1,15 @@
 ﻿using Platformer.ObjectsOfGame;
 using Platformer.ObjectsOfGame.KeyObjectLibrary;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Platformer.GameLogic
 {
+
+    /// <summary>
+    /// Логика взаимодействия с "Ключевыми обьектами". 
+    /// Либо Обьект помещается в инвентарь, либо игрок как-то иначе взаимодействует с обьектом.
+    /// Логика взаимодействия с обьектом находится в самом обьекте.
+    /// </summary>
     public static class ObjectInteraction
     {
         public static void Interaction(ArrayKeyObject arrayKeyObject, Character character)

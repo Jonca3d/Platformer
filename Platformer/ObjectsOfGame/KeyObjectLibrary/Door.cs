@@ -12,9 +12,7 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
                     bool forInventory, 
                     bool visible, 
                     ConsoleColor color = ConsoleColor.Gray) : 
-            base(x, y, 12, 5, description, forInventory, visible, color) {  }
-
-    
+            base(x, y, 12, 5, description, forInventory, visible, color) {  }    
 
         public override void Action(Character character)
         {
@@ -23,6 +21,10 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
                 if (str == "KEY")
                 {                   
                     LevelComplete.End();
+                }
+                else
+                {
+                    OutputImage.DrawString(" -=[ YOU NEED TO GET THE KEY ]=-", X - 8, Y - 2, color: ConsoleColor.Gray);
                 }
             }            
         }

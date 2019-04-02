@@ -49,7 +49,6 @@
     <Compile Include="GameLogic\OutputImage.cs" />
     <Compile Include="ObjectsOfGame\ArrayKeyObject.cs" />
     <Compile Include="ObjectsOfGame\ArrayObstractions.cs" />
-    <Compile Include="ObjectsOfGame\BackgroundImage\Tree.cs" />
     <Compile Include="ObjectsOfGame\Character.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="ObjectsOfGame\Ground.cs" />

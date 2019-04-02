@@ -2,8 +2,12 @@
 
 namespace Platformer.GameLogic
 {
+
+    /// <summary>
+    /// Показать клавиши управления
+    /// </summary>
     static class ControlsInstruction
-    {
+    {       
         public static void Show()
         {
             Console.Clear();

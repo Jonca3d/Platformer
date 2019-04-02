@@ -7,8 +7,6 @@ namespace Platformer.Service
     /// </summary>
     public class Constants
     {
-
-
         /// <summary>
         /// Ширина окна консоли.
         /// </summary>

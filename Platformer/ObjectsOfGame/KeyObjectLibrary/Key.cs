@@ -13,9 +13,7 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
             OutputImage.DrawString(" oooo         ░  ░", X, Y, color: Color);
             OutputImage.DrawString("o    Oo===========", X, Y + 1, color: Color);
             OutputImage.DrawString(" oooo", X, Y + 2, color: Color);
-        }
-
-       
+        }       
 
         public override void Action(Character c)
         {
