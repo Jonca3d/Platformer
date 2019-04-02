@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLogic\LevelComplete.cs" />
     <Compile Include="GameLogic\ObjectInteraction.cs" />
     <Compile Include="GameLogic\OutputImage.cs" />
     <Compile Include="ObjectsOfGame\ArrayKeyObject.cs" />

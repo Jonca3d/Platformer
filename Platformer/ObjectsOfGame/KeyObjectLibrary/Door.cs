@@ -24,8 +24,10 @@ namespace Platformer.ObjectsOfGame.KeyObjectLibrary
         {
             foreach(string str in character.getName())
             {
-                if (str == "KEY") { }
-                TODO: Событие уровень закончен
+                if (str == "KEY")
+                {                   
+                    LevelComplete.End();
+                }
             }            
         }
 

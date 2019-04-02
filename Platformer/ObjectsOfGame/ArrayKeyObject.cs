@@ -15,7 +15,7 @@ namespace Platformer.ObjectsOfGame
         List<KeyObject> _keyObject = new List<KeyObject>()
         {
             new Key(185, Constants.HEIGHT -118, "KEY", true, true, color: ConsoleColor.White),
-            new Door( 220, Constants.HEIGHT - 11, "DOOR", false, true, color: ConsoleColor.DarkYellow )
+            new Door( 220 , Constants.HEIGHT - 11, "DOOR", false, true, color: ConsoleColor.DarkYellow )
         };
       
 
