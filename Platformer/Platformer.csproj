@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameLogic\ControlsInstruction.cs" />
     <Compile Include="GameLogic\LevelComplete.cs" />
+    <Compile Include="GameLogic\Menu.cs" />
     <Compile Include="GameLogic\ObjectInteraction.cs" />
     <Compile Include="GameLogic\OutputImage.cs" />
     <Compile Include="ObjectsOfGame\ArrayKeyObject.cs" />

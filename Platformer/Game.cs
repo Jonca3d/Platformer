@@ -7,7 +7,7 @@ using Platformer.GameLogic;
 
 namespace Platformer
 {
-    class Game
+    public class Game
     {
         Character character = new Character(40, Constants.HEIGHT - 6);
         ArrayObstractions arrayObtractions = new ArrayObstractions();
@@ -37,7 +37,7 @@ namespace Platformer
             Console.SetWindowSize(1, 1);
             Console.SetBufferSize(Constants.WIDHT, Constants.HEIGHT);
             Console.SetWindowSize(Constants.WIDHT, Constants.HEIGHT);
-            Console.BackgroundColor = Constants.BACKGROUNDCOLOR;
+            //Console.BackgroundColor = Constants.BACKGROUNDCOLOR;
 
             Draw();
         }
@@ -45,7 +45,7 @@ namespace Platformer
         /// <summary>
         /// Отрисовка обьектов на сцене.
         /// </summary>
-        private void Draw()
+        public void Draw()
         {
             Console.Clear();
             //TEST(character);
@@ -223,6 +223,9 @@ namespace Platformer
                     break;
                 case ConsoleKey.Enter:
                     ObjectInteraction.Interaction(arrayKeyObject, character, act);
+                    break;
+                case ConsoleKey.Escape:
+                    Program.menu.Show();
                     break;
                 default:
                     break;

@@ -1,11 +1,18 @@
-﻿namespace Platformer
+﻿using Platformer.GameLogic;
+using Platformer.Service;
+
+namespace Platformer
 {
-    class Program
+    public class Program
     {
+        static Game game = new Game();
+        static string[] menuArray = new string[] { "GAME", "CONTROL", "EXIT" };
+        public static Menu menu = new Menu(menuArray, Constants.WIDHT, Constants.HEIGHT, game);
+
+
         static void Main()
-        {
-            Game game = new Game();
-            game.StartGame();
+        {         
+            menu.Show();
         }
     }
 }
